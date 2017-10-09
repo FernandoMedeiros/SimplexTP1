@@ -1,0 +1,7 @@
+C:\Users\asus\source\repos\Simplex\Simplex\bin\Debug\Simplex.exe.config
+C:\Users\asus\source\repos\Simplex\Simplex\bin\Debug\Simplex.exe
+C:\Users\asus\source\repos\Simplex\Simplex\bin\Debug\Simplex.pdb
+C:\Users\asus\source\repos\Simplex\Simplex\obj\Debug\Simplex.csprojResolveAssemblyReference.cache
+C:\Users\asus\source\repos\Simplex\Simplex\obj\Debug\Simplex.csproj.CoreCompileInputs.cache
+C:\Users\asus\source\repos\Simplex\Simplex\obj\Debug\Simplex.exe
+C:\Users\asus\source\repos\Simplex\Simplex\obj\Debug\Simplex.pdb
