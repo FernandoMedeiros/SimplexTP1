@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +19,7 @@ namespace ConsoleApp1
         static int indiceVariaveis = 0;
         static void Main(string[] args)
         {
+               //definiçao da funçao objetiva de maximizaçao ou minimizaçao
             Console.WriteLine("Sua função é de maximização? Entre com \"max\".\nSe for de minimização entre com \"min\"");
             tipo = Console.ReadLine();
             if (tipo == "max" || tipo == "min")
@@ -33,12 +34,14 @@ namespace ConsoleApp1
         }
         static void comecaPrograma(string tipo)
         {
+            //inicio da matriz 
             matrizSuperior[0, 0] = 0;
             tamanhoColuna++;
             variaveis[indiceVariaveis] = indiceVariaveis;
             indiceVariaveis++;
             while (leitura != "ql")
             {
+                //declaraçao das restriçoes sendo maximizaçao ou minimizaçao
                 Console.WriteLine("Insira indices que acompanham as variáveis na ordem na função objetiva. \"ql\" para ir para as restrições");
                 leitura = Console.ReadLine();
                 if (leitura != "ql")
@@ -59,6 +62,7 @@ namespace ConsoleApp1
             }
             while (leitura != "exit" && tipo != "exit")
             {
+                //repetiçao para criar N restriçoes
                 while (leitura != "ql" && leitura != "exit")
                 {
                     Console.WriteLine("Insira indices que acompanham as variáveis na ordem em que aparecem e digite \"ql\" para terminar a linha e passar para a próxima restrição. Digite \"exit\" quando acabarem as restrições");
@@ -108,6 +112,7 @@ namespace ConsoleApp1
                 segundaFase();
             }
 
+            //retorno da matriz de resposta
             Console.WriteLine("\n matriz final:");
             printaMatriz();
             Console.WriteLine("\n Respostas:\nO valor máximo possível de ser encontrado é " + Math.Abs(matrizSuperior[0, 0]) + " com as seguintes configuraçãoes de variáveis:\n");
@@ -124,6 +129,7 @@ namespace ConsoleApp1
 
             loopa();
         }
+        //verifica se ha numero negativo na primeira linha
         public static bool positivoPrimeiraLinha()
         {
             bool resp = false;
@@ -137,6 +143,7 @@ namespace ConsoleApp1
             return resp;
         }
 
+        //retorno de soluçoes caso sejam multiplas soluçoes ou soluçao ilimitada
         public static void segundaFase()
         {
             bool continua = true;
@@ -175,7 +182,7 @@ namespace ConsoleApp1
 
 
         }
-        //&& (matrizSuperior[x, y] != 0 && matrizSuperior[x, 0] != 0)
+        
         public static void menorQuocienteLinhas(int y)
         {
             double respostaAux = Double.MaxValue;
@@ -215,6 +222,7 @@ namespace ConsoleApp1
 
         }
 
+        //verifica numero positivo na coluna de entrada
         public static bool linhasPositivas(int y)
         {
             bool resp = false;
@@ -228,7 +236,7 @@ namespace ConsoleApp1
             return resp;
         }
 
-
+        //verifica caso de multiplas soluçoes
         public static bool multiplasSolucoes()
         {
             bool resposta = false, flag1 = false;
@@ -253,7 +261,7 @@ namespace ConsoleApp1
             return resposta;
         }
 
-
+        //verifica se ha valor negativo na primeira posiçao
         public static bool negativoML()
         {
             bool resp = false;
@@ -267,6 +275,7 @@ namespace ConsoleApp1
             return resp;
         }
 
+        //mostra a parte superior da matriz
         public static void printaMatriz()
         {
             Console.Write("\nprinta superior:\n");
@@ -282,7 +291,7 @@ namespace ConsoleApp1
 
         }
 
-
+        //mostra a parte inferior da matriz
         public static void printaMatrizInf()
         {
             Console.Write("\nprinta inferior:\n");
